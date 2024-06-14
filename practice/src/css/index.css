@@ -20,10 +20,6 @@
 }
 
 
-.header_inner{
-  border: 1px solid pink;
-}
-
 
 .profile_sidebar{
   background-color: rgb(97, 12, 255);
@@ -38,7 +34,6 @@
 .profile_pic{
   width: 55px;
   height: 55px;
-  border: 1px solid navy;
   border-radius: 50%;
   overflow: hidden;
   background-image: url("../images/user-sign-icon-front-side-with-white-background.jpg");
@@ -47,6 +42,119 @@
 
 }
 
+.profile_sidebar{
+  height: 100px;
+}
+
 .side_user_info{
   width: calc(99% - 55px);
+}
+
+
+input[type=number]{
+  color: white;
+  appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button{
+  color: white;
+  appearance: none;
+}
+
+input::placeholder{
+  color: white;
+}
+
+.main1{
+  height: 100vh;
+  background-color: black;
+  background-image: url("../images/2d-graphic-colorful-wallpaper-with-grainy-gradients.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.add_auction_overflow{
+  height: calc(100% - 80px);
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0px 0px 0px;
+}
+
+
+.main1{
+  height: 100vh;
+  background-color: black;
+  background-image: url("../images/2d-graphic-colorful-wallpaper-with-grainy-gradients.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.view_auction_overflow{
+  height: calc(100% - 80px);
+  padding: 100px 0px 0px 0px;
+}
+
+
+.view_list_inner{
+  position: relative !important;
+  height: 50px;
+}
+
+.auction_logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background-color: white;
+  position: absolute !important;
+  top: -50% !important;
+  left: 0% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.my_inner_content{
+    height: 100%;
+    width: calc(100% - 110px);
+    position: absolute;
+    right: 0;
+}
+
+
+
+.my_auction_overflow{
+  height: calc(100% - 80px);
+  padding: 100px 0px 0px 0px;
+}
+
+
+.my_list_inner{
+  position: relative !important;
+  height: 50px;
+}
+
+.auction_logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background-color: white;
+  position: absolute !important;
+  top: -50% !important;
+  left: 0% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.my_inner_content{
+    height: 100%;
+    width: calc(100% - 110px);
+    position: absolute;
+    right: 0;
 }
