@@ -280,3 +280,7 @@ input{
   justify-content: center;
   align-items: center;
 }
+
+.add_team_input::placeholder{
+  color: black;
+}
