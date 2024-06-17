@@ -11,6 +11,7 @@ import { CreateAuction } from './pages/CreateAuction';
 import { ViewAuction } from './pages/view pages/ViewAuction';
 import { MyAuction } from './pages/MyAuction';
 import { ViewMyAuction } from './pages/view pages/ViewMyAuction';
+import { Team } from './pages/view pages/Team';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let routes = createBrowserRouter([
@@ -37,6 +38,11 @@ let routes = createBrowserRouter([
   {
     path:"/view-my-auction",
     element:<ViewMyAuction/>
+  },
+
+  {
+    path:"/team",
+    element:<Team/>
   }
 ])
 root.render(
