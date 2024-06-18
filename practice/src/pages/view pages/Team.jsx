@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Header } from '../../common/Header'
 import { Sidebar } from '../../common/Sidebar'
 import { More_option } from '../../common/More_option'
@@ -7,9 +7,19 @@ import team from "../../images/user-sign-icon-front-side-with-white-background.j
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCancel, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { Row } from 'react-bootstrap'
+import axios from 'axios'
 
 export function Team() {
     let [modal, setModal] = useState(false);
+    let [data, setData] = useState(false);
+
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(res => {setData(res.data)})
+        .catch(err => console.log(err))
+    })
+
+    console.log(data)
     return (
         <>
 
@@ -179,7 +189,7 @@ export function Team() {
 
 
             <section className='add_more_btn' onClick={() => setModal(true)}>
-                <FontAwesomeIcon icon={faPlus}  />
+                <FontAwesomeIcon icon={faPlus} />
             </section>
         </>
     )
