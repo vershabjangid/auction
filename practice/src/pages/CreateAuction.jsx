@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState} from "react";
 import { Header } from "../common/Header";
 import { Sidebar } from "../common/Sidebar";
 import { Col, Row } from "react-bootstrap";
+import { json } from "react-router-dom";
 
 export function CreateAuction() {
+
+    let [name,setName]=useState("")
+    let [playerperteam,setplayerperteam]=useState("")
+    let [pointsperteam,setpointsperteam]=useState("")
+
+    const collectdata= async()=>{
+        const url = await fetch('http://localhost:2000/add-tournament',{
+            method:"post",
+            body:JSON.stringify({name,playerperteam,pointsperteam}),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+       let  result = await url.json()
+
+        console.log(result)
+    }
     return (
         <>
             <section className="main1 d-flex justify-content-between flex-column">
@@ -21,7 +39,7 @@ export function CreateAuction() {
                                             Auction Name
                                         </label>
 
-                                        <input type="text" placeholder="Enter Auction Name" className="bg-transparent border-0 py-2 border-bottom mb-4" />
+                                        <input type="text" placeholder="Enter Auction Name" onChange={(e)=>setName(e.target.value)} className="bg-transparent border-0 py-2 border-bottom mb-4" />
                                     </form>
                                 </Col>
 
@@ -32,14 +50,8 @@ export function CreateAuction() {
                                             Player Per Team
                                         </label>
 
-                                        <select type="text" placeholder="Enter Auction Name" className="bg-transparent text-white border-0 py-2 border-bottom mb-4" >
-                                            <option>11</option>
-                                            <option>12</option>
-                                            <option>13</option>
-                                            <option>14</option>
-                                            <option>15</option>
-                                            <option>16</option>
-                                        </select>
+                                        <input type="text" placeholder="Enter Auction Name" className="bg-transparent text-white border-0 py-2 border-bottom mb-4" onChange={(e)=>setplayerperteam(e.target.value)} />
+                                          
                                     </form>
                                 </Col>
 
@@ -49,7 +61,7 @@ export function CreateAuction() {
                                             Points Per Team
                                         </label>
 
-                                        <input type="number" placeholder="Enter Auction Name" className="bg-transparent border-0 py-2 border-bottom mb-4 px-2" />
+                                        <input type="number" placeholder="Enter Auction Name"  className="bg-transparent border-0 py-2 border-bottom mb-4 px-2" onChange={(e)=>setpointsperteam(e.target.value)} />
                                     </form>
                                 </Col>
 
@@ -133,7 +145,7 @@ export function CreateAuction() {
 
                             <Row className=" w-100 m-0  text-white justify-content-evenly text-center mb-3 my-lg-4">
                                 <Col className="col-12 col-lg-3 d-flex justify-content-center text-start">
-                                    <button type="button" className="py-3 px-5 col-12 rounded border-0 bg-danger text-white fs-5 fw-bold">
+                                    <button type="button" onClick={collectdata} className="py-3 px-5 col-12 rounded border-0 bg-danger text-white fs-5 fw-bold">
                                         Create Auction
                                     </button>
                                 </Col>
