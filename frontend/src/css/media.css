@@ -1,0 +1,9 @@
+@media screen and (max-width:1200px) {
+    .menubar {
+        display: block;
+    }
+
+    .nav{
+        display: none !important;
+    }
+}
